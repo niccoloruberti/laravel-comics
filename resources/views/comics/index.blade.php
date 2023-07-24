@@ -1,21 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @foreach($comicsThumb as $id => $comic)
-                <div class="col-2 my-3">
-                <a  href="{{ route('comics.show', $id) }}" class="link-underline link-underline-opacity-0">
-                    <div class="card-content h-100 w-100 d-flex flex-column align-items-center">
-                        <img src="{{ $comic['thumb'] }}">
-                        <h3 class=" mt-2 text-center text-white text-uppercase w-100"> {{ $comic['title'] }}</h3>
+    <div class="bg-dark py-5">
+        <div class="container">
+            <div class="row">
+                @foreach($comicsThumb as $id => $comic)
+                    <div class="col-2 my-3">
+                    <a  href="{{ route('comics.show', $id) }}" class="link-underline link-underline-opacity-0">
+                        <div class="card-content h-100 w-100 d-flex flex-column align-items-center">
+                            <img src="{{ $comic['thumb'] }}">
+                            <h3 class=" mt-2 text-center text-white text-uppercase w-100"> {{ $comic['title'] }}</h3>
+                        </div>
+                    </a>
                     </div>
-                </a>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
-    <div class="text-center">
-        <button>load more</button>
+        <div class="text-center">
+            <button>load more</button>
+        </div>
     </div>
 @endsection

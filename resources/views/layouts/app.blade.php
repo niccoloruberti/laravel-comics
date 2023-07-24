@@ -17,7 +17,7 @@
         <button>current series</button>
     </div>
     <!-- main -->
-    <main class="bg-dark py-5">
+    <main>
         @yield('content')
     </main>
     <!-- footer -->
