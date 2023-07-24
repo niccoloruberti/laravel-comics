@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- prima sezione --}}
     <div class="container py-5 my-5">
         <div class="row">
             <div class="col-8">
@@ -28,7 +29,102 @@
             <div class="col-4">
                 <div class="content d-flex flex-column align-items-end">
                     <label class="text-uppercase">advertisement</label>
-                    <img src="{{ $comic['thumb']}}" alt="">
+                    <img src="{{ Vite::asset('resources/img/adv.jpg')}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- seconda sezione --}}
+    <div class="bg-light">
+        <div class="container">
+            <div class="row py-3 pb-5">
+                {{-- colonna sinistra --}}
+                <div class="col-6">
+                    <div class="row me-3">
+                        <div class="col-12">
+                            <div class="content border-bottom">
+                                <h4>Talent</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2 me-3 border-bottom">
+                        <div class="col-4">
+                            <div class="content">
+                                <h6>Art by:</h6>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="content">
+                                <p class="text-info">
+                                    @foreach($comic['artists'] as $artist)
+                                        {{$artist}}, 
+                                    @endforeach
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2 me-3 border-bottom">
+                        <div class="col-4">
+                            <div class="content">
+                                <h6>Written by:</h6>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="content">
+                                <p class="text-info">
+                                    @foreach($comic['writers'] as $writer)
+                                        {{$writer}}, 
+                                    @endforeach
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- colonna destra --}}
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content border-bottom">
+                                <h4>Specs</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2 border-bottom">
+                        <div class="col-4">
+                            <div class="content">
+                                <h6>Series:</h6>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="content">
+                                <p class="text-uppercase text-info">{{$comic['series']}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2 border-bottom">
+                        <div class="col-4">
+                            <div class="content">
+                                <h6>U.S. Price:</h6>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="content">
+                                <p class="">{{ $comic['price']}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2 border-bottom">
+                        <div class="col-4">
+                            <div class="content">
+                                <h6>On Sale Date:</h6>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="content">
+                                <p class="">{{ $comic['sale_date']}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
